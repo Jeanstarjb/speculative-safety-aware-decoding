@@ -1,56 +1,66 @@
-# 🌟 Speculative Safety-Aware Decoding (SSD)
+# Speculative Safety-Aware Decoding (SSD)
 
 **Authors:** Xuekang Wang, Shengyu Zhu, Xueqi Cheng  
-📄 **Paper:** [ArXiv Link](https://arxiv.org/pdf/2508.17739v2)  
+**Paper:** [Speculative Safety-Aware Decoding (ArXiv)](https://arxiv.org/pdf/2508.17739v2)  
 
 ---
 
-## 🚀 What is SSD?
+## Introduction to SSD
 
-Speculative Safety-Aware Decoding (SSD) is a novel, lightweight technique designed to make Large Language Models (LLMs) safer and faster during inference. It tackles one of the biggest challenges in the AI world today: defending LLMs against **jailbreak attacks**—those clever tricks that exploit vulnerabilities in these models to bypass safety restrictions.  
+**Speculative Safety-Aware Decoding (SSD)** is an innovative and efficient technique that enhances the safety and speed of Large Language Model (LLM) inference. It addresses one of the most pressing challenges in AI—defending LLMs against *jailbreak attacks*. These attacks exploit vulnerabilities in LLMs to bypass safety measures, potentially leading to harmful or unethical outputs.
 
-💡 **The Core Idea:**  
-Instead of retraining or fine-tuning large models (which is expensive 💸 and resource-intensive 🖥️), SSD introduces a smarter decoding strategy. It combines the capabilities of a large model with a smaller, safety-aware model to dynamically choose safer and more accurate outputs.  
+### Core Concept
 
----
-
-## 🧠 How Does It Work?
-
-1. **Small Model Assistance:**  
-   SSD assumes the presence of a small language model that is pre-trained to follow strict safety guidelines. This model acts as a "safety guardian" during the decoding process.  
-
-2. **Speculative Sampling:**  
-   During inference, SSD uses **speculative sampling** to speed up the decoding process. Instead of blindly trusting the large model, it checks how much the large and small models agree (match ratio) on the next possible output token.  
-
-3. **Dynamic Switching:**  
-   Depending on the match ratio, SSD dynamically switches between prioritizing **utility** (useful and coherent responses) or **safety** (strict adherence to rules).  
-
-4. **Token Redistribution:**  
-   The final output token is sampled from a combined probability distribution of the large and small models. This ensures the large model retains its helpfulness for benign queries, while the small model acts as a safeguard against risky outputs.  
+Instead of retraining or fine-tuning large models—a process that is computationally expensive and resource-intensive—SSD introduces an advanced decoding strategy. By combining the strengths of a large, high-performance model with a smaller, safety-aware model, SSD ensures the output is both safe and useful.
 
 ---
 
-## 🎯 Why SSD Matters
+## How SSD Works
 
-🔒 **Safety First:** SSD equips LLMs with an additional layer of protection against jailbreak attacks, without requiring costly retraining.  
-⚡ **Speed Boost:** Thanks to speculative sampling, SSD accelerates inference time, making it efficient for real-time applications.  
-🤝 **Balanced Outputs:** It strikes a balance between utility (helpful responses) and safety (avoiding harmful or unethical content).  
+The SSD framework operates through a combination of smart techniques to make LLMs safer and faster during inference. Here’s a simplified breakdown of how it works:
 
----
+1. **Small Model as a Safety Net**  
+   SSD leverages a smaller, pre-trained language model that is specifically designed to adhere to strict safety standards. This smaller model acts as a "safety guard" during the decoding process.
 
-## 📊 Experimental Results
+2. **Speculative Sampling for Speed**  
+   SSD employs a technique called *speculative sampling* to accelerate decoding. This involves generating multiple potential outputs in parallel and evaluating their safety dynamically.
 
-SSD has been rigorously tested, and here’s what the experiments show:  
-✅ Successfully integrates safety properties into large models.  
-✅ Ensures the model remains helpful and responsive for benign queries.  
-✅ Achieves faster inference compared to traditional decoding methods.  
+3. **Dynamic Output Selection**  
+   By comparing the "match ratio" (agreement between the large and small models on the next token), SSD dynamically decides whether to prioritize:
+   - **Utility:** Generating coherent and helpful responses.
+   - **Safety:** Ensuring strict adherence to safety guidelines.
 
----
-
-## 🌐 Want to Learn More?
-
-Dive into the [paper](https://arxiv.org/pdf/2508.17739v2) for detailed methodology, experimental setups, and results.  
+4. **Token Redistribution**  
+   The final output token is sampled from a combined probability distribution of both the large and small models. This ensures that benign queries benefit from the large model’s capabilities, while the small model acts as a safeguard against unsafe or malicious responses.
 
 ---
 
-🚀 Let’s make AI safer, smarter, and faster with **Speculative Safety-Aware Decoding**! 🙌
+## Why SSD is Important
+
+1. **Enhanced Safety**  
+   SSD adds an extra layer of defense against jailbreak attacks without requiring expensive model retraining.
+
+2. **Improved Efficiency**  
+   The use of speculative sampling reduces inference time, making SSD well-suited for real-time applications.
+
+3. **Balanced Performance**  
+   SSD strikes an optimal balance between generating helpful, context-aware responses and maintaining strict safety standards.
+
+---
+
+## Experimental Results
+
+Extensive experiments demonstrate the effectiveness of SSD across key metrics:  
+- **Safety:** SSD successfully integrates robust safety properties into large models.  
+- **Utility:** Models remain responsive and helpful for benign queries, without sacrificing performance.  
+- **Efficiency:** SSD achieves faster inference compared to traditional decoding methods, making it computationally efficient for deployment.
+
+---
+
+## Learn More
+
+For a deeper dive into the methodology, experimental design, and results, refer to the full [paper on ArXiv](https://arxiv.org/pdf/2508.17739v2).  
+
+---
+
+By combining safety and efficiency, Speculative Safety-Aware Decoding (SSD) offers a scalable solution to some of the biggest challenges in modern AI. Explore SSD to make AI both smarter and safer.
